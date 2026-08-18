@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  GraduationCap,
   Sparkles,
   ShieldCheck,
   CalendarCheck,
   Calendar,
   FileText,
   Briefcase,
-  Users,
   Bot,
   ArrowRight,
   CheckCircle2,
@@ -58,71 +56,72 @@ export const LandingPage: React.FC = () => {
     <div className="space-y-24 pb-20">
       {/* Hero Section */}
       <section className="relative pt-16 lg:pt-24 overflow-hidden text-center">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
-          <Badge variant="brand" className="px-3 py-1 text-xs">
-            <Sparkles className="w-3.5 h-3.5 mr-1 text-brand-500" /> NEXCAMPUS v2.0 Released
-          </Badge>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 dark:bg-brand-500/20 border border-brand-500/30 text-brand-700 dark:text-brand-300 font-extrabold text-xs">
+            <Sparkles className="w-4 h-4 text-brand-500" />
+            <span>NEXCAMPUS v2.0 Released</span>
+          </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
             The operating system for{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-indigo-400 to-purple-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-indigo-600 to-purple-600 dark:from-brand-400 dark:via-indigo-400 dark:to-purple-400">
               your campus.
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 dark:text-nex-muted max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
             Eliminate disconnected portals, spreadsheets, and messaging groups. Centralize student attendance, assignment grading, event QR passes, placement drives, and admin analytics in one sleek interface.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link to="/register">
               <Button size="lg" icon={<ArrowRight className="w-4 h-4" />}>
                 Get Started
               </Button>
             </Link>
             <a href="#quick-demo">
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="secondary">
                 Instant Demo Access
               </Button>
             </a>
           </div>
 
-          {/* Quick 1-Click Persona Login */}
-          <div id="quick-demo" className="mt-16 max-w-3xl mx-auto p-6 bg-white dark:bg-nex-surface border border-gray-200 dark:border-nex-border rounded-2xl text-left space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="font-bold text-xs uppercase tracking-wider text-gray-500 dark:text-nex-muted flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-brand-500" /> 1-Click Hackathon Persona Login:
+          {/* 1-Click Hackathon Persona Login */}
+          <div id="quick-demo" className="mt-16 max-w-3xl mx-auto p-6 bg-slate-900 text-white border border-slate-800 rounded-3xl text-left space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <h3 className="font-extrabold text-xs uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-brand-400" /> 1-Click Hackathon Persona Login:
               </h3>
-              <span className="text-[10px] text-gray-400 font-mono">Pre-seeded DB Accounts</span>
+              <span className="text-xs text-slate-400 font-mono">Pre-seeded DB Accounts</span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <button
                 onClick={() => quickDemoLogin('student@demo.com')}
-                className="p-3 bg-gray-50 dark:bg-nex-elevated hover:border-brand-500 border border-gray-200 dark:border-nex-border rounded-xl text-left transition-all group"
+                className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-brand-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-bold text-gray-900 dark:text-white">Student 🎓</div>
-                <div className="text-[10px] text-gray-400 mt-0.5 truncate">student@demo.com</div>
+                <div className="text-xs font-extrabold text-white">Student 🎓</div>
+                <div className="text-xs text-slate-400 mt-1 truncate font-mono">student@demo.com</div>
               </button>
               <button
                 onClick={() => quickDemoLogin('faculty@demo.com')}
-                className="p-3 bg-gray-50 dark:bg-nex-elevated hover:border-amber-500 border border-gray-200 dark:border-nex-border rounded-xl text-left transition-all group"
+                className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-amber-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-bold text-gray-900 dark:text-white">Faculty 👨‍🏫</div>
-                <div className="text-[10px] text-gray-400 mt-0.5 truncate">faculty@demo.com</div>
+                <div className="text-xs font-extrabold text-white">Faculty 👨‍🏫</div>
+                <div className="text-xs text-slate-400 mt-1 truncate font-mono">faculty@demo.com</div>
               </button>
               <button
                 onClick={() => quickDemoLogin('coordinator@demo.com')}
-                className="p-3 bg-gray-50 dark:bg-nex-elevated hover:border-purple-500 border border-gray-200 dark:border-nex-border rounded-xl text-left transition-all group"
+                className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-purple-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-bold text-gray-900 dark:text-white">Coordinator 🎪</div>
-                <div className="text-[10px] text-gray-400 mt-0.5 truncate">coordinator@demo.com</div>
+                <div className="text-xs font-extrabold text-white">Coordinator 🎪</div>
+                <div className="text-xs text-slate-400 mt-1 truncate font-mono">coordinator@demo.com</div>
               </button>
               <button
                 onClick={() => quickDemoLogin('admin@demo.com')}
-                className="p-3 bg-gray-50 dark:bg-nex-elevated hover:border-rose-500 border border-gray-200 dark:border-nex-border rounded-xl text-left transition-all group"
+                className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-rose-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-bold text-gray-900 dark:text-white">Admin 🛡️</div>
-                <div className="text-[10px] text-gray-400 mt-0.5 truncate">admin@demo.com</div>
+                <div className="text-xs font-extrabold text-white">Admin 🛡️</div>
+                <div className="text-xs text-slate-400 mt-1 truncate font-mono">admin@demo.com</div>
               </button>
             </div>
           </div>
@@ -131,73 +130,73 @@ export const LandingPage: React.FC = () => {
 
       {/* Feature Grid */}
       <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <Badge variant="brand">Unified Modules</Badge>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Everything your institution needs
           </h2>
-          <p className="text-xs text-gray-500 dark:text-nex-muted">
+          <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
             Engineered for high informational clarity, fast interaction speeds, and server-enforced security.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="space-y-3">
-            <div className="w-10 h-10 bg-emerald-500/10 text-emerald-500 rounded-xl flex items-center justify-center font-bold">
+            <div className="w-10 h-10 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center font-bold">
               <CalendarCheck className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Smart Attendance & Target Advice</h3>
-            <p className="text-xs text-gray-500 dark:text-nex-muted leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Smart Attendance & Target Advice</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Faculty session launcher with student percentage breakdowns and automated attendance threshold advice ("Attend next 2 classes to reach 80%").
             </p>
           </Card>
 
           <Card className="space-y-3">
-            <div className="w-10 h-10 bg-indigo-500/10 text-indigo-500 rounded-xl flex items-center justify-center font-bold">
+            <div className="w-10 h-10 bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold">
               <FileText className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Task-Management Assignments</h3>
-            <p className="text-xs text-gray-500 dark:text-nex-muted leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Task-Management Assignments</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Submission board for PDF, ZIP, and GitHub repo links. Automatic late-submission flag detection and faculty grading stack.
             </p>
           </Card>
 
           <Card className="space-y-3">
-            <div className="w-10 h-10 bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center font-bold">
+            <div className="w-10 h-10 bg-purple-500/15 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center font-bold">
               <Calendar className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Event Passes & Seat Limits</h3>
-            <p className="text-xs text-gray-500 dark:text-nex-muted leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Event Passes & Seat Limits</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Event catalog with seat progress indicators (`184 / 300 registered`), unique QR entry passes, and ticket scanner validation.
             </p>
           </Card>
 
           <Card className="space-y-3">
-            <div className="w-10 h-10 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center font-bold">
+            <div className="w-10 h-10 bg-amber-500/15 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center font-bold">
               <Briefcase className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Placement Drive Portal</h3>
-            <p className="text-xs text-gray-500 dark:text-nex-muted leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Placement Drive Portal</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Job placement listings with auto-enforced GPA eligibility checks, resume upload, and real-time application status tracking.
             </p>
           </Card>
 
           <Card className="space-y-3">
-            <div className="w-10 h-10 bg-sky-500/10 text-sky-500 rounded-xl flex items-center justify-center font-bold">
+            <div className="w-10 h-10 bg-sky-500/15 text-sky-600 dark:text-sky-400 rounded-xl flex items-center justify-center font-bold">
               <Bot className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">AI Campus Assistant</h3>
-            <p className="text-xs text-gray-500 dark:text-nex-muted leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">AI Campus Assistant</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Natural language assistant parsing query prompts ("When is my assignment due?", "What is my attendance?") safely guarded by RBAC.
             </p>
           </Card>
 
           <Card className="space-y-3">
-            <div className="w-10 h-10 bg-rose-500/10 text-rose-500 rounded-xl flex items-center justify-center font-bold">
+            <div className="w-10 h-10 bg-rose-500/15 text-rose-600 dark:text-rose-400 rounded-xl flex items-center justify-center font-bold">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white">Audit Trail & RBAC</h3>
-            <p className="text-xs text-gray-500 dark:text-nex-muted leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Audit Trail & RBAC</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Strict 4-level server-side permission checks with real-time audit logging for sensitive user management and administrative actions.
             </p>
           </Card>
@@ -206,10 +205,10 @@ export const LandingPage: React.FC = () => {
 
       {/* Role Benefits Interactive Switcher */}
       <section id="roles" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white dark:bg-nex-surface border border-gray-200 dark:border-nex-border rounded-3xl p-8 lg:p-12">
+        <div className="bg-white dark:bg-nex-surface border border-slate-200 dark:border-nex-border rounded-3xl p-8 lg:p-12 shadow-subtle">
           <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
             <Badge variant="brand">Targeted Role Benefits</Badge>
-            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Tailored for every campus persona
             </h2>
           </div>
@@ -219,10 +218,10 @@ export const LandingPage: React.FC = () => {
               <button
                 key={r}
                 onClick={() => setActiveRole(r)}
-                className={`px-4 py-2 rounded-xl font-bold text-xs capitalize transition-all ${
+                className={`px-4 py-2 rounded-xl font-extrabold text-xs capitalize transition-all ${
                   activeRole === r
                     ? 'bg-brand-600 text-white shadow-sm'
-                    : 'bg-gray-100 dark:bg-nex-elevated text-gray-600 dark:text-gray-400 hover:text-white'
+                    : 'bg-slate-100 dark:bg-nex-elevated text-slate-700 dark:text-slate-300 hover:text-brand-500'
                 }`}
               >
                 {r} View
@@ -234,62 +233,62 @@ export const LandingPage: React.FC = () => {
             <div className="space-y-4">
               {activeRole === 'student' && (
                 <>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">For Students 🎓</h3>
-                  <p className="text-xs text-gray-500 dark:text-nex-muted">Stay on top of academics, deadlines, and career opportunities with zero friction.</p>
-                  <ul className="space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> View subject-wise attendance & target goal advice</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Submit assignments & GitHub repo links</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Download unique QR event pass tickets</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Auto-check GPA eligibility for placement drives</li>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Students 🎓</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Stay on top of academics, deadlines, and career opportunities with zero friction.</p>
+                  <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> View subject-wise attendance & target goal advice</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Submit assignments & GitHub repo links</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Download unique QR event pass tickets</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Auto-check GPA eligibility for placement drives</li>
                   </ul>
                 </>
               )}
               {activeRole === 'faculty' && (
                 <>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">For Faculty 👨‍🏫</h3>
-                  <p className="text-xs text-gray-500 dark:text-nex-muted">Effortlessly manage course sessions, grading workflows, and student progress.</p>
-                  <ul className="space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Create attendance sessions & quick-mark student roster</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Publish assignments with deadlines & max marks</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Grade submissions with feedback stack</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Identify low-attendance students automatically</li>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Faculty 👨‍🏫</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Effortlessly manage course sessions, grading workflows, and student progress.</p>
+                  <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Create attendance sessions & quick-mark student roster</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Publish assignments with deadlines & max marks</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Grade submissions with feedback stack</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Identify low-attendance students automatically</li>
                   </ul>
                 </>
               )}
               {activeRole === 'coordinator' && (
                 <>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">For Coordinators 🎪</h3>
-                  <p className="text-xs text-gray-500 dark:text-nex-muted">Orchestrate university events, campus club activities, and announcements.</p>
-                  <ul className="space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Publish campus events & manage seat capacities</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Scan and validate student QR pass codes</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Manage campus clubs & activity feeds</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Broadcast announcements to targeted audiences</li>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Coordinators 🎪</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Orchestrate university events, campus club activities, and announcements.</p>
+                  <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Publish campus events & manage seat capacities</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Scan and validate student QR pass codes</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Manage campus clubs & activity feeds</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Broadcast announcements to targeted audiences</li>
                   </ul>
                 </>
               )}
               {activeRole === 'admin' && (
                 <>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">For Administrators 🛡️</h3>
-                  <p className="text-xs text-gray-500 dark:text-nex-muted">Full platform governance, user management, and institution analytics.</p>
-                  <ul className="space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Manage users, assign roles, and set departments</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Real-time database analytics & performance charts</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Inspect detailed activity audit logs</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Configure system policies & academic catalogs</li>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Administrators 🛡️</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Full platform governance, user management, and institution analytics.</p>
+                  <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Manage users, assign roles, and set departments</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Real-time database analytics & performance charts</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Inspect detailed activity audit logs</li>
+                    <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Configure system policies & academic catalogs</li>
                   </ul>
                 </>
               )}
             </div>
 
-            <div className="p-5 bg-[#0B0D10] border border-[#252B33] rounded-2xl font-mono text-xs text-gray-300 shadow-2xl">
-              <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[#252B33]">
-                <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                <span className="text-[10px] text-gray-500 ml-2">rbac-matrix.json</span>
+            <div className="p-6 bg-slate-950 border border-slate-800 rounded-2xl font-mono text-xs text-slate-200 shadow-2xl">
+              <div className="flex items-center gap-2 mb-4 pb-2 border-b border-slate-800">
+                <div className="w-3 h-3 rounded-full bg-rose-500" />
+                <div className="w-3 h-3 rounded-full bg-amber-500" />
+                <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                <span className="text-xs text-slate-400 ml-2">rbac-matrix.json</span>
               </div>
-              <pre className="text-[11px] text-emerald-400 overflow-x-auto">
+              <pre className="text-xs text-emerald-400 overflow-x-auto">
 {`{
   "role": "${activeRole.toUpperCase()}",
   "permissions": [
@@ -309,7 +308,7 @@ export const LandingPage: React.FC = () => {
       <section id="faq" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="text-center space-y-2">
           <Badge variant="neutral">FAQ</Badge>
-          <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Frequently Asked Questions
           </h2>
         </div>
@@ -318,17 +317,17 @@ export const LandingPage: React.FC = () => {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="bg-white dark:bg-nex-surface border border-gray-200 dark:border-nex-border rounded-xl overflow-hidden"
+              className="bg-white dark:bg-nex-surface border border-slate-200 dark:border-nex-border rounded-2xl overflow-hidden shadow-subtle"
             >
               <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="w-full p-4 text-left font-bold text-xs text-gray-900 dark:text-white flex items-center justify-between"
+                className="w-full p-5 text-left font-bold text-xs text-slate-900 dark:text-white flex items-center justify-between"
               >
                 <span>{faq.q}</span>
-                {openFaq === i ? <ChevronUp className="w-4 h-4 text-brand-500" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+                {openFaq === i ? <ChevronUp className="w-4 h-4 text-brand-500 shrink-0" /> : <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />}
               </button>
               {openFaq === i && (
-                <div className="px-4 pb-4 text-xs text-gray-500 dark:text-nex-muted leading-relaxed border-t border-gray-100 dark:border-nex-border pt-3">
+                <div className="px-5 pb-5 text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed border-t border-slate-100 dark:border-nex-border pt-3">
                   {faq.a}
                 </div>
               )}
@@ -341,12 +340,12 @@ export const LandingPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-brand-600 rounded-3xl p-10 lg:p-14 text-center text-white shadow-glow">
           <h2 className="text-3xl font-extrabold tracking-tight">Experience NEXCAMPUS SaaS today.</h2>
-          <p className="mt-2 text-xs sm:text-sm text-brand-100 max-w-xl mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-brand-100 max-w-xl mx-auto font-medium">
             Test the operating system for your campus with pre-seeded demo accounts and server-enforced RBAC.
           </p>
           <div className="mt-6 flex justify-center gap-3">
             <Link to="/register">
-              <Button size="lg" className="bg-white text-brand-700 hover:bg-gray-100 border-none">
+              <Button size="lg" className="bg-white text-brand-700 hover:bg-slate-100 border-none font-extrabold">
                 Get Started
               </Button>
             </Link>

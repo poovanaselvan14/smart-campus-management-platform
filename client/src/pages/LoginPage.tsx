@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GraduationCap, Mail, Lock, LogIn, Sparkles } from 'lucide-react';
+import { Mail, Lock, LogIn, Sparkles, ShieldCheck } from 'lucide-react';
 import { Input } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
@@ -44,24 +44,24 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50 dark:bg-dark-bg">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-slate-50 dark:bg-nex-bg text-slate-900 dark:text-nex-text">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center space-y-2">
-          <Link to="/" className="inline-flex items-center gap-2">
-            <div className="p-2.5 bg-gradient-to-tr from-brand-600 to-indigo-500 text-white rounded-2xl shadow-lg">
-              <GraduationCap className="w-7 h-7" />
+          <Link to="/" className="inline-flex items-center gap-3">
+            <div className="w-10 h-10 bg-brand-600 text-white rounded-2xl flex items-center justify-center font-extrabold text-lg shadow-sm">
+              N
             </div>
-            <span className="font-extrabold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-purple-500">
-              CampusSync
+            <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
+              NEXCAMPUS
             </span>
           </Link>
-          <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white">Sign in to your account</h2>
-          <p className="text-xs text-gray-500 dark:text-gray-400">Access your role-based campus dashboard</p>
+          <h2 className="text-xl font-extrabold text-slate-900 dark:text-white">Sign in to your account</h2>
+          <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">The operating system for your campus</p>
         </div>
 
         <Card className="p-6 space-y-5">
           {error && (
-            <div className="p-3 text-xs bg-rose-500/10 border border-rose-500/20 text-rose-500 rounded-xl">
+            <div className="p-3 text-xs bg-rose-500/15 border border-rose-500/30 text-rose-700 dark:text-rose-300 font-bold rounded-xl">
               {error}
             </div>
           )}
@@ -91,36 +91,36 @@ export const LoginPage: React.FC = () => {
             </Button>
           </form>
 
-          <div className="pt-2 border-t border-gray-100 dark:border-dark-border text-center">
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3 flex items-center justify-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-brand-500" /> Instant Demo Personas (1-Click Login):
+          <div className="pt-3 border-t border-slate-200 dark:border-nex-border text-center space-y-3">
+            <p className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center justify-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-brand-500" /> Instant Demo Access (1-Click Login):
             </p>
             <div className="grid grid-cols-2 gap-2 text-xs">
               <button
                 type="button"
                 onClick={() => handleQuickLogin('student@demo.com')}
-                className="p-2 bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 rounded-xl hover:bg-brand-500/20 font-bold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-brand-500 font-extrabold transition-all text-left"
               >
                 🎓 Student
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('faculty@demo.com')}
-                className="p-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 rounded-xl hover:bg-amber-500/20 font-bold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-amber-500 font-extrabold transition-all text-left"
               >
                 👨‍🏫 Faculty
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('coordinator@demo.com')}
-                className="p-2 bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 rounded-xl hover:bg-purple-500/20 font-bold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-purple-500 font-extrabold transition-all text-left"
               >
                 🎪 Coordinator
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('admin@demo.com')}
-                className="p-2 bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 rounded-xl hover:bg-rose-500/20 font-bold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-rose-500 font-extrabold transition-all text-left"
               >
                 🛡️ Admin
               </button>
@@ -128,9 +128,9 @@ export const LoginPage: React.FC = () => {
           </div>
         </Card>
 
-        <p className="text-center text-xs text-gray-500 dark:text-gray-400">
+        <p className="text-center text-xs text-slate-600 dark:text-slate-400 font-medium">
           Don't have an account?{' '}
-          <Link to="/register" className="font-bold text-brand-500 hover:underline">
+          <Link to="/register" className="font-bold text-brand-600 dark:text-brand-400 hover:underline">
             Create account
           </Link>
         </p>
