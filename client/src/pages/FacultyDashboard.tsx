@@ -6,9 +6,7 @@ import {
   Users,
   AlertTriangle,
   Plus,
-  CheckCircle2,
-  Clock,
-  ArrowRight,
+  UserCheck,
 } from 'lucide-react';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
@@ -98,19 +96,21 @@ export const FacultyDashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Faculty Welcome Header */}
-      <div className="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 rounded-3xl p-6 sm:p-8 text-white shadow-glow">
+      <div className="bg-brand-600 rounded-3xl p-6 sm:p-8 text-white shadow-subtle">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <span className="text-xs uppercase tracking-wider font-semibold text-amber-200">Faculty Portal</span>
-            <h1 className="text-2xl sm:text-3xl font-extrabold mt-1">Welcome, {user?.name}! 👨‍🏫</h1>
-            <p className="text-xs sm:text-sm text-amber-100 mt-1 max-w-xl">
+            <span className="text-xs uppercase tracking-wider font-extrabold text-brand-200 flex items-center gap-1.5">
+              <UserCheck className="w-4 h-4" /> Faculty Portal
+            </span>
+            <h1 className="text-2xl sm:text-3xl font-extrabold mt-1">Welcome, {user?.name}</h1>
+            <p className="text-xs text-brand-100 mt-1 max-w-xl font-medium">
               Associate Professor • Computer Science & Engineering • ID #{user?.profile?.employeeId || 'FAC-2024-08'}
             </p>
           </div>
           <div className="flex gap-2">
             <Button
               onClick={() => setSessionModalOpen(true)}
-              className="bg-white text-amber-800 hover:bg-amber-50 border-none shadow-lg text-xs font-bold"
+              className="bg-white text-brand-700 hover:bg-slate-100 border-none text-xs font-bold"
               icon={<Plus className="w-4 h-4" />}
             >
               Take Attendance Session
@@ -123,38 +123,38 @@ export const FacultyDashboard: React.FC = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Assigned Courses</span>
-            <div className="p-2 bg-amber-500/10 text-amber-500 rounded-xl"><CalendarCheck className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Assigned Courses</span>
+            <div className="p-2 bg-amber-500/15 text-amber-600 rounded-xl"><CalendarCheck className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-gray-900 dark:text-white">{courses.length || 2}</div>
-          <p className="text-[10px] text-gray-400">Active undergraduate classes</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{courses.length || 2}</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Active undergraduate classes</p>
         </Card>
 
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Active Assignments</span>
-            <div className="p-2 bg-indigo-500/10 text-indigo-500 rounded-xl"><FileText className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Active Assignments</span>
+            <div className="p-2 bg-indigo-500/15 text-indigo-600 rounded-xl"><FileText className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-gray-900 dark:text-white">{assignments.length}</div>
-          <p className="text-[10px] text-gray-400">Homework & projects active</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{assignments.length}</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Homework & projects active</p>
         </Card>
 
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Total Students</span>
-            <div className="p-2 bg-sky-500/10 text-sky-500 rounded-xl"><Users className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Students</span>
+            <div className="p-2 bg-sky-500/15 text-sky-600 rounded-xl"><Users className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-gray-900 dark:text-white">128</div>
-          <p className="text-[10px] text-gray-400">Enrolled across CS101 & CS202</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">128</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Enrolled across CS101 & CS202</p>
         </Card>
 
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Low Attendance Alerts</span>
-            <div className="p-2 bg-rose-500/10 text-rose-500 rounded-xl"><AlertTriangle className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Attendance Alerts</span>
+            <div className="p-2 bg-rose-500/15 text-rose-600 rounded-xl"><AlertTriangle className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-rose-500">2</div>
-          <p className="text-[10px] text-gray-400">Students below 75% threshold</p>
+          <div className="text-2xl font-extrabold text-rose-600 dark:text-rose-400">2</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Students below 75% threshold</p>
         </Card>
       </div>
 
@@ -163,7 +163,7 @@ export const FacultyDashboard: React.FC = () => {
         {/* Assigned Courses list */}
         <Card className="p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-gray-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <CalendarCheck className="w-4 h-4 text-amber-500" /> Assigned Course Offerings
             </h3>
             <Button size="sm" onClick={() => setSessionModalOpen(true)} icon={<Plus className="w-3.5 h-3.5" />}>
@@ -175,14 +175,14 @@ export const FacultyDashboard: React.FC = () => {
             {courses.map((c) => (
               <div
                 key={c.id}
-                className="p-4 rounded-2xl border border-gray-200/80 dark:border-dark-border/80 bg-gray-50/50 dark:bg-dark-bg/50 flex items-center justify-between"
+                className="p-4 rounded-2xl border border-slate-200 dark:border-nex-border bg-slate-50 dark:bg-nex-elevated flex items-center justify-between"
               >
                 <div>
                   <div className="flex items-center gap-2">
                     <Badge variant="warning">{c.code}</Badge>
-                    <h4 className="text-xs font-bold text-gray-900 dark:text-white">{c.name}</h4>
+                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">{c.name}</h4>
                   </div>
-                  <p className="text-[10px] text-gray-400 mt-1">{c.credits} Credits • Computer Science & Engineering</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">{c.credits} Credits • Computer Science & Engineering</p>
                 </div>
                 <Link to="/attendance">
                   <Button size="sm" variant="outline">Attendance</Button>
@@ -195,7 +195,7 @@ export const FacultyDashboard: React.FC = () => {
         {/* Assignments Stack & Creator */}
         <Card className="p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-gray-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <FileText className="w-4 h-4 text-indigo-500" /> Published Assignments
             </h3>
             <Button size="sm" onClick={() => setCreateAssModalOpen(true)} icon={<Plus className="w-3.5 h-3.5" />}>
@@ -207,11 +207,11 @@ export const FacultyDashboard: React.FC = () => {
             {assignments.map((a) => (
               <div
                 key={a.id}
-                className="p-4 rounded-2xl border border-gray-200/80 dark:border-dark-border/80 bg-gray-50/50 dark:bg-dark-bg/50 flex items-center justify-between"
+                className="p-4 rounded-2xl border border-slate-200 dark:border-nex-border bg-slate-50 dark:bg-nex-elevated flex items-center justify-between"
               >
                 <div>
-                  <h4 className="text-xs font-bold text-gray-900 dark:text-white">{a.title}</h4>
-                  <p className="text-[10px] text-gray-400">Due: {new Date(a.deadline).toLocaleDateString()} • Max Marks: {a.maxMarks}</p>
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-white">{a.title}</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Due: {new Date(a.deadline).toLocaleDateString()} • Max Marks: {a.maxMarks}</p>
                 </div>
                 <Link to="/assignments">
                   <Button size="sm" variant="secondary">Review Submissions</Button>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Lock, LogIn, Sparkles, ShieldCheck } from 'lucide-react';
+import { Mail, Lock, LogIn, ShieldCheck, GraduationCap, UserCheck, Calendar } from 'lucide-react';
 import { Input } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
@@ -93,36 +93,36 @@ export const LoginPage: React.FC = () => {
 
           <div className="pt-3 border-t border-slate-200 dark:border-nex-border text-center space-y-3">
             <p className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center justify-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-brand-500" /> Instant Demo Access (1-Click Login):
+              <ShieldCheck className="w-4 h-4 text-brand-500" /> Demo Account Authenticator:
             </p>
             <div className="grid grid-cols-2 gap-2 text-xs">
               <button
                 type="button"
                 onClick={() => handleQuickLogin('student@demo.com')}
-                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-brand-500 font-extrabold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-brand-500 font-extrabold transition-all text-left flex items-center gap-2"
               >
-                🎓 Student
+                <GraduationCap className="w-4 h-4 text-brand-500 shrink-0" /> Student
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('faculty@demo.com')}
-                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-amber-500 font-extrabold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-amber-500 font-extrabold transition-all text-left flex items-center gap-2"
               >
-                👨‍🏫 Faculty
+                <UserCheck className="w-4 h-4 text-amber-500 shrink-0" /> Faculty
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('coordinator@demo.com')}
-                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-purple-500 font-extrabold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-purple-500 font-extrabold transition-all text-left flex items-center gap-2"
               >
-                🎪 Coordinator
+                <Calendar className="w-4 h-4 text-purple-500 shrink-0" /> Coordinator
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('admin@demo.com')}
-                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-rose-500 font-extrabold transition-all text-left"
+                className="p-2.5 bg-slate-100 dark:bg-nex-elevated text-slate-900 dark:text-white border border-slate-300 dark:border-nex-border rounded-xl hover:border-rose-500 font-extrabold transition-all text-left flex items-center gap-2"
               >
-                🛡️ Admin
+                <ShieldCheck className="w-4 h-4 text-rose-500 shrink-0" /> Admin
               </button>
             </div>
           </div>

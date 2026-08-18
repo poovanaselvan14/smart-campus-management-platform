@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  Sparkles,
   ShieldCheck,
   CalendarCheck,
   Calendar,
@@ -12,6 +11,9 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronUp,
+  GraduationCap,
+  UserCheck,
+  Layers,
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
@@ -58,8 +60,8 @@ export const LandingPage: React.FC = () => {
       <section className="relative pt-16 lg:pt-24 overflow-hidden text-center">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 dark:bg-brand-500/20 border border-brand-500/30 text-brand-700 dark:text-brand-300 font-extrabold text-xs">
-            <Sparkles className="w-4 h-4 text-brand-500" />
-            <span>NEXCAMPUS v2.0 Released</span>
+            <Layers className="w-4 h-4 text-brand-500" />
+            <span>NEXCAMPUS v2.0 Platform</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
@@ -81,7 +83,7 @@ export const LandingPage: React.FC = () => {
             </Link>
             <a href="#quick-demo">
               <Button size="lg" variant="secondary">
-                Instant Demo Access
+                Demo Access
               </Button>
             </a>
           </div>
@@ -90,37 +92,45 @@ export const LandingPage: React.FC = () => {
           <div id="quick-demo" className="mt-16 max-w-3xl mx-auto p-6 bg-slate-900 text-white border border-slate-800 rounded-3xl text-left space-y-4 shadow-2xl">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h3 className="font-extrabold text-xs uppercase tracking-wider text-slate-300 flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-brand-400" /> 1-Click Hackathon Persona Login:
+                <ShieldCheck className="w-4 h-4 text-brand-400" /> 1-Click Persona Authentication:
               </h3>
-              <span className="text-xs text-slate-400 font-mono">Pre-seeded DB Accounts</span>
+              <span className="text-xs text-slate-400 font-mono">Pre-seeded Database Accounts</span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <button
                 onClick={() => quickDemoLogin('student@demo.com')}
                 className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-brand-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-extrabold text-white">Student 🎓</div>
+                <div className="flex items-center gap-2 text-xs font-extrabold text-white">
+                  <GraduationCap className="w-4 h-4 text-brand-400" /> Student
+                </div>
                 <div className="text-xs text-slate-400 mt-1 truncate font-mono">student@demo.com</div>
               </button>
               <button
                 onClick={() => quickDemoLogin('faculty@demo.com')}
                 className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-amber-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-extrabold text-white">Faculty 👨‍🏫</div>
+                <div className="flex items-center gap-2 text-xs font-extrabold text-white">
+                  <UserCheck className="w-4 h-4 text-amber-400" /> Faculty
+                </div>
                 <div className="text-xs text-slate-400 mt-1 truncate font-mono">faculty@demo.com</div>
               </button>
               <button
                 onClick={() => quickDemoLogin('coordinator@demo.com')}
                 className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-purple-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-extrabold text-white">Coordinator 🎪</div>
+                <div className="flex items-center gap-2 text-xs font-extrabold text-white">
+                  <Calendar className="w-4 h-4 text-purple-400" /> Coordinator
+                </div>
                 <div className="text-xs text-slate-400 mt-1 truncate font-mono">coordinator@demo.com</div>
               </button>
               <button
                 onClick={() => quickDemoLogin('admin@demo.com')}
                 className="p-3.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-rose-500 rounded-2xl text-left transition-all group"
               >
-                <div className="text-xs font-extrabold text-white">Admin 🛡️</div>
+                <div className="flex items-center gap-2 text-xs font-extrabold text-white">
+                  <ShieldCheck className="w-4 h-4 text-rose-400" /> Admin
+                </div>
                 <div className="text-xs text-slate-400 mt-1 truncate font-mono">admin@demo.com</div>
               </button>
             </div>
@@ -131,9 +141,9 @@ export const LandingPage: React.FC = () => {
       {/* Feature Grid */}
       <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <Badge variant="brand">Unified Modules</Badge>
+          <Badge variant="brand">Unified Architecture</Badge>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Everything your institution needs
+            Institutional Management Suite
           </h2>
           <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
             Engineered for high informational clarity, fast interaction speeds, and server-enforced security.
@@ -145,7 +155,7 @@ export const LandingPage: React.FC = () => {
             <div className="w-10 h-10 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center font-bold">
               <CalendarCheck className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Smart Attendance & Target Advice</h3>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Smart Attendance Engine</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Faculty session launcher with student percentage breakdowns and automated attendance threshold advice ("Attend next 2 classes to reach 80%").
             </p>
@@ -155,7 +165,7 @@ export const LandingPage: React.FC = () => {
             <div className="w-10 h-10 bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold">
               <FileText className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Task-Management Assignments</h3>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Assignment Management</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Submission board for PDF, ZIP, and GitHub repo links. Automatic late-submission flag detection and faculty grading stack.
             </p>
@@ -165,7 +175,7 @@ export const LandingPage: React.FC = () => {
             <div className="w-10 h-10 bg-purple-500/15 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center font-bold">
               <Calendar className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Event Passes & Seat Limits</h3>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Event Pass System</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Event catalog with seat progress indicators (`184 / 300 registered`), unique QR entry passes, and ticket scanner validation.
             </p>
@@ -195,7 +205,7 @@ export const LandingPage: React.FC = () => {
             <div className="w-10 h-10 bg-rose-500/15 text-rose-600 dark:text-rose-400 rounded-xl flex items-center justify-center font-bold">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Audit Trail & RBAC</h3>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Audit Trail & Security</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
               Strict 4-level server-side permission checks with real-time audit logging for sensitive user management and administrative actions.
             </p>
@@ -207,7 +217,7 @@ export const LandingPage: React.FC = () => {
       <section id="roles" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white dark:bg-nex-surface border border-slate-200 dark:border-nex-border rounded-3xl p-8 lg:p-12 shadow-subtle">
           <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-            <Badge variant="brand">Targeted Role Benefits</Badge>
+            <Badge variant="brand">RBAC Permission Matrix</Badge>
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Tailored for every campus persona
             </h2>
@@ -233,7 +243,9 @@ export const LandingPage: React.FC = () => {
             <div className="space-y-4">
               {activeRole === 'student' && (
                 <>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Students 🎓</h3>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <GraduationCap className="w-5 h-5 text-brand-500" /> Student Operations
+                  </h3>
                   <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Stay on top of academics, deadlines, and career opportunities with zero friction.</p>
                   <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
                     <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> View subject-wise attendance & target goal advice</li>
@@ -245,7 +257,9 @@ export const LandingPage: React.FC = () => {
               )}
               {activeRole === 'faculty' && (
                 <>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Faculty 👨‍🏫</h3>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <UserCheck className="w-5 h-5 text-amber-500" /> Faculty Management Portal
+                  </h3>
                   <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Effortlessly manage course sessions, grading workflows, and student progress.</p>
                   <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
                     <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Create attendance sessions & quick-mark student roster</li>
@@ -257,7 +271,9 @@ export const LandingPage: React.FC = () => {
               )}
               {activeRole === 'coordinator' && (
                 <>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Coordinators 🎪</h3>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-purple-500" /> Event & Club Coordinator
+                  </h3>
                   <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Orchestrate university events, campus club activities, and announcements.</p>
                   <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
                     <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Publish campus events & manage seat capacities</li>
@@ -269,7 +285,9 @@ export const LandingPage: React.FC = () => {
               )}
               {activeRole === 'admin' && (
                 <>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">For Administrators 🛡️</h3>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <ShieldCheck className="w-5 h-5 text-rose-500" /> Enterprise Administration
+                  </h3>
                   <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Full platform governance, user management, and institution analytics.</p>
                   <ul className="space-y-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
                     <li className="flex items-center gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> Manage users, assign roles, and set departments</li>
@@ -286,7 +304,7 @@ export const LandingPage: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-rose-500" />
                 <div className="w-3 h-3 rounded-full bg-amber-500" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                <span className="text-xs text-slate-400 ml-2">rbac-matrix.json</span>
+                <span className="text-xs text-slate-400 ml-2">rbac-policy.json</span>
               </div>
               <pre className="text-xs text-emerald-400 overflow-x-auto">
 {`{
