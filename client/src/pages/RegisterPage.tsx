@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Lock, User as UserIcon, Phone, UserCheck } from 'lucide-react';
+import { Mail, Lock, User as UserIcon, Phone, UserCheck, Shield } from 'lucide-react';
 import { Input } from '../components/ui/Input';
 import { Select } from '../components/ui/Select';
 import { Button } from '../components/ui/Button';
@@ -99,6 +99,7 @@ export const RegisterPage: React.FC = () => {
               label="Requested Role"
               value={formData.role}
               onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+              icon={<Shield className="w-4 h-4" />}
               options={[
                 { value: 'STUDENT', label: 'Student' },
                 { value: 'FACULTY', label: 'Faculty' },
