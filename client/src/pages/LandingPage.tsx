@@ -361,12 +361,18 @@ export const LandingPage: React.FC = () => {
           <p className="mt-3 text-xs sm:text-sm text-brand-100 max-w-xl mx-auto font-medium">
             Test the operating system for your campus with pre-seeded demo accounts and server-enforced RBAC.
           </p>
-          <div className="mt-6 flex justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link to="/register">
-              <Button size="lg" className="bg-white text-brand-700 hover:bg-slate-100 border-none font-extrabold">
-                Get Started
-              </Button>
+              <button className="px-6 py-3 bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-xs sm:text-sm rounded-xl shadow-lg border border-white transition-all flex items-center gap-2">
+                <span>Get Started</span>
+                <ArrowRight className="w-4 h-4 text-slate-900" />
+              </button>
             </Link>
+            <a href="#quick-demo">
+              <button className="px-6 py-3 bg-brand-800 hover:bg-brand-900 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-lg border border-brand-500 transition-all flex items-center gap-2">
+                <span>Demo Access</span>
+              </button>
+            </a>
           </div>
         </div>
       </section>
