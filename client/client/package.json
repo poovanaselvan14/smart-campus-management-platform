@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd .. && npm run build && node -e \"const fs=require('fs'), p=require('path'), s=p.resolve('../dist'), d=p.resolve('./dist'); if(fs.existsSync(s)) fs.cpSync(s,d,{recursive:true});\""
+    "build": "cd .. && npm run build && node -e \"const fs=require('fs'); if(fs.existsSync('dist')) { fs.cpSync('dist', './dist', {recursive: true}); } if(fs.existsSync('../dist')) { fs.cpSync('../dist', '../../dist', {recursive: true}); }\""
   }
 }
