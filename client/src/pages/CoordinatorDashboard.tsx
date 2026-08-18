@@ -80,18 +80,18 @@ export const CoordinatorDashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Coordinator Header */}
-      <div className="bg-gradient-to-r from-purple-600 via-indigo-600 to-brand-700 rounded-3xl p-6 sm:p-8 text-white shadow-glow">
+      <div className="bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-700 rounded-3xl p-6 sm:p-8 text-white shadow-subtle">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <span className="text-xs uppercase tracking-wider font-semibold text-purple-200">Coordinator Command Center</span>
-            <h1 className="text-2xl sm:text-3xl font-extrabold mt-1">Hello, {user?.name}! 🎪</h1>
-            <p className="text-xs sm:text-sm text-purple-100 mt-1 max-w-xl">
+            <span className="text-xs uppercase tracking-wider font-extrabold text-brand-200">Coordinator Command Center</span>
+            <h1 className="text-2xl sm:text-3xl font-extrabold mt-1">Hello, {user?.name}!</h1>
+            <p className="text-xs sm:text-sm text-brand-100 mt-1 max-w-xl font-medium">
               Campus Activities, Club Societies & QR Entry Ticket Verification
             </p>
           </div>
           <Button
             onClick={() => setCreateEventModal(true)}
-            className="bg-white text-purple-800 hover:bg-purple-50 border-none shadow-lg text-xs font-bold"
+            className="bg-white text-brand-700 hover:bg-slate-100 border-none text-xs font-extrabold shadow-sm"
             icon={<Plus className="w-4 h-4" />}
           >
             Create New Campus Event
@@ -103,46 +103,46 @@ export const CoordinatorDashboard: React.FC = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Active Events</span>
-            <div className="p-2 bg-purple-500/10 text-purple-500 rounded-xl"><Calendar className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Active Events</span>
+            <div className="p-2 bg-purple-500/15 text-purple-600 dark:text-purple-400 rounded-xl"><Calendar className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-gray-900 dark:text-white">{events.length}</div>
-          <p className="text-[10px] text-gray-400">Scheduled campus activities</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{events.length}</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Scheduled campus activities</p>
         </Card>
 
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Campus Clubs</span>
-            <div className="p-2 bg-indigo-500/10 text-indigo-500 rounded-xl"><Users className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Campus Clubs</span>
+            <div className="p-2 bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 rounded-xl"><Users className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-gray-900 dark:text-white">{clubs.length}</div>
-          <p className="text-[10px] text-gray-400">Registered student societies</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{clubs.length}</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Registered student societies</p>
         </Card>
 
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Total Registrations</span>
-            <div className="p-2 bg-emerald-500/10 text-emerald-500 rounded-xl"><QrCode className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Registrations</span>
+            <div className="p-2 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 rounded-xl"><QrCode className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-gray-900 dark:text-white">150+</div>
-          <p className="text-[10px] text-gray-400">Issued QR entry passes</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">150+</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Issued QR entry passes</p>
         </Card>
 
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400">Announcements</span>
-            <div className="p-2 bg-amber-500/10 text-amber-500 rounded-xl"><Bell className="w-4 h-4" /></div>
+            <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Announcements</span>
+            <div className="p-2 bg-amber-500/15 text-amber-600 dark:text-amber-400 rounded-xl"><Bell className="w-4 h-4" /></div>
           </div>
-          <div className="text-2xl font-extrabold text-gray-900 dark:text-white">5</div>
-          <p className="text-[10px] text-gray-400">Broadcasted notices</p>
+          <div className="text-2xl font-extrabold text-slate-900 dark:text-white">5</div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Broadcasted notices</p>
         </Card>
       </div>
 
       {/* QR Code Ticket Scanner / Verification Simulator */}
-      <Card className="p-6 space-y-4 border-2 border-purple-500/30 bg-purple-500/5">
+      <Card className="p-6 space-y-4 border border-brand-500/20 bg-brand-500/5">
         <div className="flex items-center justify-between">
-          <h3 className="text-base font-bold text-gray-900 dark:text-white flex items-center gap-2">
-            <QrCode className="w-5 h-5 text-purple-500" /> Event Entry Ticket Scanner Validator
+          <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <QrCode className="w-5 h-5 text-brand-500" /> Event Entry Ticket Scanner Validator
           </h3>
           <Badge variant="brand">Live Verification</Badge>
         </div>
@@ -163,8 +163,8 @@ export const CoordinatorDashboard: React.FC = () => {
           <div
             className={`p-4 rounded-2xl flex items-center gap-3 text-xs font-bold ${
               qrResult.success
-                ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30'
-                : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30'
+                ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+                : 'bg-rose-500/15 text-rose-700 dark:text-rose-300 border border-rose-500/30'
             }`}
           >
             {qrResult.success ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <AlertCircle className="w-5 h-5 text-rose-500" />}
@@ -177,15 +177,15 @@ export const CoordinatorDashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card className="p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-gray-900 dark:text-white">Managed Campus Events</h3>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">Managed Campus Events</h3>
             <Button size="sm" onClick={() => setCreateEventModal(true)}>+ New Event</Button>
           </div>
           <div className="space-y-3">
             {events.map((e) => (
-              <div key={e.id} className="p-4 rounded-2xl border border-gray-200 dark:border-dark-border flex items-center justify-between">
+              <div key={e.id} className="p-4 rounded-2xl border border-slate-200 dark:border-nex-border bg-slate-50 dark:bg-nex-elevated flex items-center justify-between">
                 <div>
-                  <h4 className="text-xs font-bold text-gray-900 dark:text-white">{e.title}</h4>
-                  <p className="text-[10px] text-gray-400">{e.venue} • Capacity: {e.capacity}</p>
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-white">{e.title}</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">{e.venue} • Capacity: {e.capacity}</p>
                 </div>
                 <Link to="/events"><Button size="sm" variant="outline">Manage</Button></Link>
               </div>
@@ -195,15 +195,15 @@ export const CoordinatorDashboard: React.FC = () => {
 
         <Card className="p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-gray-900 dark:text-white">Active Student Clubs</h3>
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">Active Student Clubs</h3>
             <Link to="/clubs"><Button size="sm" variant="outline">View Directory</Button></Link>
           </div>
           <div className="space-y-3">
             {clubs.map((c) => (
-              <div key={c.id} className="p-4 rounded-2xl border border-gray-200 dark:border-dark-border flex items-center justify-between">
+              <div key={c.id} className="p-4 rounded-2xl border border-slate-200 dark:border-nex-border bg-slate-50 dark:bg-nex-elevated flex items-center justify-between">
                 <div>
-                  <h4 className="text-xs font-bold text-gray-900 dark:text-white">{c.name}</h4>
-                  <p className="text-[10px] text-gray-400">{c.category} • {c.memberCount || 12} Members</p>
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-white">{c.name}</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">{c.category} • {c.memberCount || 12} Members</p>
                 </div>
                 <Badge variant="brand">{c.category}</Badge>
               </div>

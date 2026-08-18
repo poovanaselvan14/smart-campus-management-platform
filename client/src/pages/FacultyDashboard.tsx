@@ -96,7 +96,7 @@ export const FacultyDashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Faculty Welcome Header */}
-      <div className="bg-brand-600 rounded-3xl p-6 sm:p-8 text-white shadow-subtle">
+      <div className="bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-700 rounded-3xl p-6 sm:p-8 text-white shadow-subtle">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <span className="text-xs uppercase tracking-wider font-extrabold text-brand-200 flex items-center gap-1.5">
@@ -110,7 +110,7 @@ export const FacultyDashboard: React.FC = () => {
           <div className="flex gap-2">
             <Button
               onClick={() => setSessionModalOpen(true)}
-              className="bg-white text-brand-700 hover:bg-slate-100 border-none text-xs font-bold"
+              className="bg-white text-brand-700 hover:bg-slate-100 border-none text-xs font-extrabold shadow-sm"
               icon={<Plus className="w-4 h-4" />}
             >
               Take Attendance Session
@@ -124,7 +124,7 @@ export const FacultyDashboard: React.FC = () => {
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Assigned Courses</span>
-            <div className="p-2 bg-amber-500/15 text-amber-600 rounded-xl"><CalendarCheck className="w-4 h-4" /></div>
+            <div className="p-2 bg-amber-500/15 text-amber-600 dark:text-amber-400 rounded-xl"><CalendarCheck className="w-4 h-4" /></div>
           </div>
           <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{courses.length || 2}</div>
           <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Active undergraduate classes</p>
@@ -133,7 +133,7 @@ export const FacultyDashboard: React.FC = () => {
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Active Assignments</span>
-            <div className="p-2 bg-indigo-500/15 text-indigo-600 rounded-xl"><FileText className="w-4 h-4" /></div>
+            <div className="p-2 bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 rounded-xl"><FileText className="w-4 h-4" /></div>
           </div>
           <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{assignments.length}</div>
           <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Homework & projects active</p>
@@ -142,7 +142,7 @@ export const FacultyDashboard: React.FC = () => {
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Students</span>
-            <div className="p-2 bg-sky-500/15 text-sky-600 rounded-xl"><Users className="w-4 h-4" /></div>
+            <div className="p-2 bg-sky-500/15 text-sky-600 dark:text-sky-400 rounded-xl"><Users className="w-4 h-4" /></div>
           </div>
           <div className="text-2xl font-extrabold text-slate-900 dark:text-white">128</div>
           <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Enrolled across CS101 & CS202</p>
@@ -151,7 +151,7 @@ export const FacultyDashboard: React.FC = () => {
         <Card className="p-5 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Attendance Alerts</span>
-            <div className="p-2 bg-rose-500/15 text-rose-600 rounded-xl"><AlertTriangle className="w-4 h-4" /></div>
+            <div className="p-2 bg-rose-500/15 text-rose-600 dark:text-rose-400 rounded-xl"><AlertTriangle className="w-4 h-4" /></div>
           </div>
           <div className="text-2xl font-extrabold text-rose-600 dark:text-rose-400">2</div>
           <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Students below 75% threshold</p>
