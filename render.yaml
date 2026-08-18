@@ -2,15 +2,17 @@ services:
   - type: web
     name: nexcampus-backend
     env: node
-    buildCommand: cd server && npm install && npm run build
+    buildCommand: cd server && npm install && npm run build && npx prisma db push --accept-data-loss && npm run db:seed
     startCommand: cd server && npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 5000
       - key: JWT_SECRET
         generateValue: true
+      - key: CORS_ORIGIN
+        value: https://smart-campus-management-platform-five.vercel.app
+      - key: FRONTEND_URL
+        value: https://smart-campus-management-platform.vercel.app
       - key: DATABASE_URL
         fromDatabase:
           name: nexcampus-db

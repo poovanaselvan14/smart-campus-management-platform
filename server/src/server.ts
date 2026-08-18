@@ -8,9 +8,8 @@ async function main() {
     await prisma.$connect();
     console.log('✅ Connected to database via Prisma.');
 
-    app.listen(PORT, () => {
+    app.listen(Number(PORT), '0.0.0.0', () => {
       console.log(`🚀 Smart Campus Management Server running on port ${PORT}`);
-      console.log(`📑 OpenAPI Swagger UI available at http://localhost:${PORT}/api/docs`);
     });
   } catch (error) {
     console.error('❌ Failed to start server:', error);
