@@ -80,22 +80,31 @@ export const CoordinatorDashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Coordinator Header */}
-      <div className="bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-700 rounded-3xl p-6 sm:p-8 text-white shadow-subtle">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <span className="text-xs uppercase tracking-wider font-extrabold text-brand-200">Coordinator Command Center</span>
-            <h1 className="text-2xl sm:text-3xl font-extrabold mt-1">Hello, {user?.name}!</h1>
-            <p className="text-xs sm:text-sm text-brand-100 mt-1 max-w-xl font-medium">
+      <div className="bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-700 rounded-3xl p-6 sm:p-8 text-white shadow-subtle border border-brand-500/20">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-1.5">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-extrabold uppercase tracking-wider text-brand-100">
+              <Users className="w-3.5 h-3.5" /> Coordinator Command Center
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Hello, {user?.name}!</h1>
+            <p className="text-xs sm:text-sm text-brand-100 max-w-xl font-medium">
               Campus Activities, Club Societies & QR Entry Ticket Verification
             </p>
           </div>
-          <Button
-            onClick={() => setCreateEventModal(true)}
-            className="bg-white text-brand-700 hover:bg-slate-100 border-none text-xs font-extrabold shadow-sm"
-            icon={<Plus className="w-4 h-4" />}
-          >
-            Create New Campus Event
-          </Button>
+
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 bg-black/20 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-white/10 shrink-0">
+            <div className="px-3 py-1 hidden sm:block border-r border-white/10 text-right">
+              <span className="block text-[10px] font-extrabold uppercase tracking-wider text-brand-200">System Mode</span>
+              <span className="text-xs font-bold text-white">Live Scanner Active</span>
+            </div>
+            <Button
+              onClick={() => setCreateEventModal(true)}
+              className="bg-white/15 hover:bg-white/25 text-white border border-white/20 backdrop-blur-sm text-xs font-extrabold transition-all active:scale-[0.98]"
+              icon={<Plus className="w-4 h-4" />}
+            >
+              Create New Campus Event
+            </Button>
+          </div>
         </div>
       </div>
 
