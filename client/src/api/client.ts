@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = import.meta.env.VITE_API_URL || 'https://nexcampus-backend.onrender.com/api';
+const baseURL = import.meta.env.VITE_API_URL || 'https://smart-campus-management-platform-271j.onrender.com/api';
 
 export const api = axios.create({
   baseURL,
