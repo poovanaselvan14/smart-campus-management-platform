@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GraduationCap, Mail, Lock, User as UserIcon, Phone, UserCheck } from 'lucide-react';
+import { Mail, Lock, User as UserIcon, Phone, UserCheck } from 'lucide-react';
 import { Input } from '../components/ui/Input';
 import { Select } from '../components/ui/Select';
 import { Button } from '../components/ui/Button';
@@ -31,31 +31,31 @@ export const RegisterPage: React.FC = () => {
       await registerUser(formData);
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Registration failed.');
+      setError(err.response?.data?.message || 'Registration failed. Please check form details.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-50 dark:bg-dark-bg">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-slate-50 dark:bg-nex-bg text-slate-900 dark:text-nex-text">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center space-y-2">
-          <Link to="/" className="inline-flex items-center gap-2">
-            <div className="p-2.5 bg-gradient-to-tr from-brand-600 to-indigo-500 text-white rounded-2xl shadow-lg">
-              <GraduationCap className="w-7 h-7" />
+          <Link to="/" className="inline-flex items-center gap-3">
+            <div className="w-10 h-10 bg-brand-600 text-white rounded-2xl flex items-center justify-center font-extrabold text-lg shadow-sm">
+              N
             </div>
-            <span className="font-extrabold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-purple-500">
-              CampusSync
+            <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
+              NEXCAMPUS
             </span>
           </Link>
-          <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white">Create your account</h2>
-          <p className="text-xs text-gray-500 dark:text-gray-400">Join your campus digital management portal</p>
+          <h2 className="text-xl font-extrabold text-slate-900 dark:text-white">Create your account</h2>
+          <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Join the operating system for your campus</p>
         </div>
 
         <Card className="p-6 space-y-4">
           {error && (
-            <div className="p-3 text-xs bg-rose-500/10 border border-rose-500/20 text-rose-500 rounded-xl">
+            <div className="p-3 text-xs bg-rose-500/15 border border-rose-500/30 text-rose-700 dark:text-rose-300 font-bold rounded-xl">
               {error}
             </div>
           )}
@@ -63,7 +63,7 @@ export const RegisterPage: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-3">
             <Input
               label="Full Name"
-              placeholder="Ethan Morgan"
+              placeholder="Alex Johnson"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               icon={<UserIcon className="w-4 h-4" />}
@@ -72,7 +72,7 @@ export const RegisterPage: React.FC = () => {
             <Input
               label="Email Address"
               type="email"
-              placeholder="ethan@campus.edu"
+              placeholder="alex@campus.edu"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               icon={<Mail className="w-4 h-4" />}
@@ -121,9 +121,9 @@ export const RegisterPage: React.FC = () => {
           </form>
         </Card>
 
-        <p className="text-center text-xs text-gray-500 dark:text-gray-400">
+        <p className="text-center text-xs text-slate-600 dark:text-slate-400 font-medium">
           Already registered?{' '}
-          <Link to="/login" className="font-bold text-brand-500 hover:underline">
+          <Link to="/login" className="font-bold text-brand-600 dark:text-brand-400 hover:underline">
             Sign In
           </Link>
         </p>
