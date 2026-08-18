@@ -5,7 +5,7 @@ const baseURL = import.meta.env.VITE_API_URL || '/api';
 export const api = axios.create({
   baseURL,
   withCredentials: true,
-  timeout: 15000,
+  timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -26,7 +26,6 @@ api.interceptors.response.use(
   async (error) => {
     const config = error.config;
     
-    // Auto-retry up to 2 times for cold-start network errors or 503
     if (!config || !config.retryCount) {
       config.retryCount = 0;
     }
