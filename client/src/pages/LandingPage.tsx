@@ -31,7 +31,9 @@ export const LandingPage: React.FC = () => {
       await login(email, 'Password123!');
       navigate('/dashboard');
     } catch (e: any) {
-      alert(e.response?.data?.message || 'Unable to connect to the campus server. Please try again in a few seconds.');
+      const status = e.response?.status;
+      const msg = e.response?.data?.message || e.message || 'Login failed';
+      alert(status ? `Authentication Error (${status}): ${msg}` : `Connection Error: ${msg}`);
     }
   };
 

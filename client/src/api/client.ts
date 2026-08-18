@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = import.meta.env.VITE_API_URL || '/api';
+const baseURL = import.meta.env.VITE_API_URL || 'https://nexcampus-backend.onrender.com/api';
 
 export const api = axios.create({
   baseURL,
@@ -32,7 +32,7 @@ api.interceptors.response.use(
     
     if (config.retryCount < 2 && (error.code === 'ERR_NETWORK' || error.response?.status === 503 || error.code === 'ECONNABORTED')) {
       config.retryCount += 1;
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       return api(config);
     }
 
