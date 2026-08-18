@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .nex-card {
+    @apply bg-white dark:bg-nex-surface border border-gray-200 dark:border-nex-border rounded-2xl transition-all duration-200;
+  }
+  .nex-card-hover {
+    @apply hover:border-gray-300 dark:hover:border-nex-borderHover hover:shadow-subtle;
+  }
+  .nex-glass {
+    @apply bg-white/80 dark:bg-nex-surface/80 backdrop-blur-md border border-gray-200/80 dark:border-nex-border/80;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-600;
+}
+
+/* Subtle Smooth Transitions */
+* {
+  border-color: var(--tw-border-opacity, 1);
+}
