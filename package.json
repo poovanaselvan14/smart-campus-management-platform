@@ -4,9 +4,7 @@
   "private": true,
   "description": "NEXCAMPUS — The Operating System for Your Campus",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
-    "start": "cd server && npm start",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm run dev"
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server"
   }
 }
