@@ -30,8 +30,8 @@ export const LandingPage: React.FC = () => {
     try {
       await login(email, 'Password123!');
       navigate('/dashboard');
-    } catch (e) {
-      alert('Login failed. Ensure backend server is running on port 5000.');
+    } catch (e: any) {
+      alert(e.response?.data?.message || e.message || 'Login failed. Please verify API server connection.');
     }
   };
 

@@ -34,6 +34,8 @@ app.use(helmet({ contentSecurityPolicy: false }));
 const allowedOrigins = [
   process.env.CORS_ORIGIN,
   process.env.FRONTEND_URL,
+  'https://smart-campus-management-platform-five.vercel.app',
+  'https://smart-campus-management-platform.vercel.app',
   'http://localhost:5173',
   'http://localhost:3000',
   'http://localhost:5000',
@@ -41,10 +43,10 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+    if (!origin || allowedOrigins.includes(origin) || (origin && origin.endsWith('.vercel.app')) || process.env.NODE_ENV !== 'production') {
       callback(null, true);
     } else {
-      callback(null, true); // Permissive CORS for hackathon deployment demonstration
+      callback(null, true);
     }
   },
   credentials: true,
