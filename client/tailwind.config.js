@@ -9,13 +9,14 @@ export default {
     extend: {
       colors: {
         nex: {
-          bg: '#0B0D10',
-          surface: '#11151A',
-          elevated: '#171C22',
-          border: '#252B33',
-          borderHover: '#333B46',
-          text: '#F3F4F6',
-          muted: '#9CA3AF',
+          bg: '#090A0F',
+          surface: '#12151E',
+          elevated: '#1A1E2B',
+          border: '#272E3F',
+          borderHover: '#3B465E',
+          text: '#F9FAFB',
+          muted: '#94A3B8',
+          secondary: '#CBD5E1',
         },
         brand: {
           50: '#eef2ff',
@@ -33,11 +34,11 @@ export default {
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Menlo', 'monospace'],
+        mono: ['"JetBrains Mono"', 'Menlo', 'monospace'],
       },
       boxShadow: {
-        subtle: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        glow: '0 0 20px -3px rgba(99, 102, 241, 0.25)',
+        subtle: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        glow: '0 0 25px -3px rgba(99, 102, 241, 0.3)',
       },
     },
   },
